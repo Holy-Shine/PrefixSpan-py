@@ -8,7 +8,9 @@
 
 > [PrefixSpan: Mining Sequential Patterns Efficiently by Prefix-Projected Pattern Growth](http://hanj.cs.illinois.edu/pdf/span01.pdf)
 
+代码详细解释：
 
+https://www.cnblogs.com/HolyShine/p/11176843.html
 
 ## 快速开始
 
