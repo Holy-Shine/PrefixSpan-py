@@ -43,3 +43,15 @@ This simple python script **does not rely on any other third-party libraries**. 
 
    - minSup: min_support declared in paper, default 0.5
    - minConf: min_confidence, default 0
+   
+4. Print result.
+
+   ```python
+   print(L)
+   ```
+
+   **[out]：**
+
+   > [[(1,), (2,), (3,)], [(1, 2), (1, 3), (2, 3)], [(1, 2, 3)], []]
+
+   The length of pattern sequence in result list increases by 1 
