@@ -1,3 +1,5 @@
+<a href="https://996.icu"><img src="https://img.shields.io/badge/link-996.icu-red.svg?style=flat-square"></a> <a href='https://pytorch.org/'><img src='https://img.shields.io/badge/python-3.5-green.svg?style=flat-square'></a>[![HitCount](http://hits.dwyl.io/Holy-Shine/PrefixSpan-py.svg)](http://hits.dwyl.io/Holy-Shine/PrefixSpan-py)
+
 # PrefixSpan-py
 
 一个基于Python的数据挖掘算法 **PrefixSpan** 的简单实现。
