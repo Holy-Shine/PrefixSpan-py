@@ -70,7 +70,6 @@ def genNewPostfixDic(D,Lk, prePost):
                 if D[r_i][c_i]==tgt:
                     postfixDic[Ck][r_i] = c_i
                     break
-    print(postfixDic)
     return postfixDic
 
 def psGen(D, Lk, postfixDic, minSup, minConf):
@@ -106,25 +105,34 @@ def psGen(D, Lk, postfixDic, minSup, minConf):
     
     return retList
 
-def PrefixSpan(D, minSup=0.5, minConf=0.5):
+def PrefixSpan(D, minSup=0.5, minConf=0.5, sptNum=False):
     L1, postfixDic = createC1(D, minSup)
+
+    Dic_L1 = [{x:len(postfixDic[x])} for x in L1]
+    
+    Dic_L = [Dic_L1]
+
     L = [L1]
+
     k=2
     while len(L[k-2])>0:
         # 生成新的候选集合
         Lk = psGen(D, L[k-2], postfixDic,minSup, minConf)
         # 根据新的候选集合获取新的后缀
         postfixDic = genNewPostfixDic(D,Lk,postfixDic)
+        Dic_Lk = [{x:len(postfixDic[x])} for x in Lk]
+
         # 加入到集合中
         L.append(Lk)
+        Dic_L1.append(Dic_Lk)
         k+=1
-
-    return L
+    
+    return Dic_L
 
 
 if  __name__ =='__main__':
 
-    L = PrefixSpan(data,minSup=0.3,minConf=0.5)
+    L = PrefixSpan(data,minSup=0.8,minConf=0, sptNum=True)
     for i in range(len(L)-1,-1,-1):
         for Cx in L[i]:
             print(Cx)
