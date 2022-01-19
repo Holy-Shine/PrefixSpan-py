@@ -17,7 +17,7 @@ def rmLowSup(D,Cx, postfixDic,minSup):
     根据当前候选集合删除低support的候选集
     '''
     Lx = Cx
-    for iset in Cx:
+    for iset in Cx.copy():
         if len(postfixDic[iset])/len(D) < minSup:
             Lx.remove(iset)
             postfixDic.pop(iset)
